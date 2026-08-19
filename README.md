@@ -1,4 +1,4 @@
-# Mini DevOps Project
+# DevOps Project
 
 A simple DevOps project created to demonstrate basic application development, automation scripts, documentation, and Git/GitHub version control practices.
 
