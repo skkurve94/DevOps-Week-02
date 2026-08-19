@@ -11,15 +11,17 @@ The main purpose of this project is to practice:
 * Git and GitHub
 * Repository management
 * Version control
+* CICD
 * Basic shell scripting
 * Application deployment
 * Backup automation
 * Project documentation
 
+
 ## 📂 Project DevOps-Week-02
 
 ```text
-mini-devops-project/
+DevOps-Week-02/
 │
 ├── src/
 │   ├── app.py
