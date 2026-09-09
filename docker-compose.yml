@@ -1,0 +1,20 @@
+services:
+
+  web:
+    build: .
+    container_name: sk-royal-container
+
+    ports:
+      - "8081:80"
+    networks:
+      - restaurant-network
+
+  nginx-test:
+    image: nginx:alpine
+    container_name: nginx-test
+    networks:
+      - restaurant-network
+
+networks:
+  restaurant-network:
+    driver: bridge

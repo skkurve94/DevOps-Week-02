@@ -1,0 +1,643 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SK Royal Bites</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background: #111111;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: #181818;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f5b942;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #ffd166;
+        }
+
+        .logo span {
+            color: #ff4d5a;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.75),
+                    rgba(20,10,5,0.85)
+                ),
+                linear-gradient(135deg, #75151f, #181818, #805800);
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px #000000;
+        }
+
+        .hero h1 span {
+            color: #ffd166;
+        }
+
+        .hero p {
+            color: #ffffff;
+            font-size: 21px;
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-block;
+            padding: 15px 32px;
+            margin: 8px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background: #e63946;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background: #ff5c67;
+        }
+
+        .btn-gold {
+            background: #ffd166;
+            color: #111111;
+        }
+
+        .btn-gold:hover {
+            background: #ffe29a;
+        }
+
+        /* COMMON SECTION */
+        section {
+        }
+
+        .section-title {
+            text-align: center;
+        }
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        .section-title p {
+            color: #ffffff;
+        /* MENU */
+        .menu {
+        }
+            grid-template-columns:
+            gap: 25px;
+        }
+
+        .food-card {
+            background: #242424;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            border: 1px solid #555555;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-icon {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .food-card h3 {
+            color: #ffffff;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .food-card p {
+            color: #eeeeee;
+            font-size: 15px;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #ffd166;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #32151a;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 850px;
+            margin: auto;
+            color: #ffffff;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        /* RESERVATION */
+        .reservation {
+            background: #111111;
+        }
+
+        .reservation-box {
+            max-width: 650px;
+            margin: auto;
+            padding: 35px;
+            background: #242424;
+            border-radius: 20px;
+            border: 1px solid #555555;
+        }
+
+        .reservation-box label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            color: #ffd166;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #777777;
+            background: #111111;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        input::placeholder {
+            color: #cccccc;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #ffd166;
+            outline: none;
+        }
+
+        /* RADIO BUTTONS */
+        .radio-group {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ffffff;
+            font-size: 16px;
+        }
+
+        .radio-option input {
+            width: 18px;
+            height: 18px;
+            accent-color: #e63946;
+        }
+
+        /* SUBMIT */
+        .submit-btn {
+            width: 100%;
+            margin-top: 30px;
+            padding: 16px;
+            border: none;
+            border-radius: 30px;
+            background: #e63946;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #ff5964;
+        }
+
+        /* CONTACT */
+        .contact {
+            background: #1b1b1b;
+            text-align: center;
+        }
+
+        .contact p {
+            color: #ffffff;
+            font-size: 17px;
+            margin: 12px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #080808;
+            text-align: center;
+            padding: 25px;
+            color: #dddddd;
+            font-size: 15px;
+        }
+
+        footer strong {
+            color: #ffd166;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 6px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .radio-group {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+
+        <div class="logo">
+            SK<span> Royal Bites</span>
+        </div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+            <a href="#reservation">Reservation</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Welcome to <span>SK Royal Bites</span>
+            </h1>
+
+            <p>
+                🍽️ Premium Food • ✨ Great Taste • ❤️ Memorable Moments
+            </p>
+
+            <p>
+                Experience delicious food prepared with fresh ingredients
+                and served with love.
+            </p>
+
+            <a href="#menu" class="btn btn-primary">
+                🍴 Explore Menu
+            </a>
+
+            <a href="#reservation" class="btn btn-gold">
+                📅 Reserve Table
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- MENU -->
+    <section class="menu" id="menu">
+
+        <div class="section-title">
+
+            <h2>🍴 Our Premium Menu</h2>
+
+            <p>
+                Fresh ingredients. Delicious recipes. Amazing taste.
+            </p>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+            <div class="food-card">
+                <div class="food-icon">🥘</div>
+                <h3>Paneer Tikka</h3>
+                <p>
+                    Soft paneer with delicious Indian spices.
+                </p>
+                <div class="price">₹250</div>
+            </div>
+
+
+            <div class="food-card">
+                <div class="food-icon">🍚</div>
+                <h3>Veg Biryani</h3>
+                <p>
+                    Aromatic basmati rice with fresh vegetables.
+                </p>
+                <div class="price">₹220</div>
+            </div>
+
+
+            <div class="food-card">
+                <div class="food-icon">🥞</div>
+                <h3>Masala Dosa</h3>
+                <p>
+                    Crispy dosa served with delicious masala.
+                </p>
+                <div class="price">₹150</div>
+            </div>
+
+
+            <div class="food-card">
+                <div class="food-icon">🍕</div>
+                <h3>Premium Pizza</h3>
+                <p>
+                    Cheesy pizza with fresh toppings.
+                </p>
+                <div class="price">₹300</div>
+            </div>
+
+
+            <div class="food-card">
+                <div class="food-icon">🍔</div>
+                <h3>Classic Burger</h3>
+                <p>
+                    Fresh vegetables with special restaurant sauce.
+                </p>
+                <div class="price">₹200</div>
+            </div>
+
+
+            <div class="food-card">
+                <div class="food-icon">🥤</div>
+                <h3>Cold Coffee</h3>
+                <p>
+                    Rich, creamy and perfectly chilled coffee.
+                </p>
+                <div class="price">₹120</div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+
+        <div class="section-title">
+            <h2>✨ SK Royal Bites</h2>
+        </div>
+
+        <p>
+            At SK Royal Bites, we believe great food brings people together.
+            Our chefs prepare every dish using fresh ingredients and
+            authentic flavors. Whether it is a family dinner, romantic
+            evening or special celebration, we make every moment memorable.
+        </p>
+
+    </section>
+
+
+    <!-- RESERVATION -->
+    <section class="reservation" id="reservation">
+
+        <div class="section-title">
+
+            <h2>📅 Reserve Your Table</h2>
+
+            <p>
+                Book your table and enjoy a premium dining experience.
+            </p>
+
+        </div>
+
+
+        <div class="reservation-box">
+
+            <form>
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label>Email</label>
+
+                <input
+                    type="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+
+                <label>Reservation Date</label>
+
+                <input type="date" required>
+
+
+                <label>Number of Guests</label>
+
+                <select>
+
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                    <option>5 Guests</option>
+                    <option>6+ Guests</option>
+
+                </select>
+
+
+                <label>Preferred Seating</label>
+
+                <div class="radio-group">
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="seating"
+                            value="indoor"
+                            checked
+                        >
+                        🏠 Indoor
+                    </label>
+
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="seating"
+                            value="outdoor"
+                        >
+                        🌿 Outdoor
+                    </label>
+
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="seating"
+                            value="private"
+                        >
+                        💎 Private
+                    </label>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="submit-btn"
+                >
+                    Confirm Reservation
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+
+        <div class="section-title">
+            <h2>📞 Contact Us</h2>
+        </div>
+
+        <p>📍 Mumbai, Maharashtra</p>
+
+        <p>📞 +91 98765 43210</p>
+
+        <p>✉️ cantact: skroyalbites@gmail.com<p></p>
+
+        <p>🕐 Open Daily: 11:00 AM - 11:00 PM</p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        © 2026
+        <strong>SK Royal bites</strong>
+        | Fresh Food • Great Taste • Happy Customers
+
+    </footer>
+
+</body>
+</html>
+```
+            border-color: #ffd166;
+                repeat(auto-fit, minmax(240px, 1fr));
+            display: grid;
+
+        .menu-grid {
+            background: #151515;
+        }
+
+            font-size: 17px;
+
+            font-weight: 800;
+            color: #ffd166;
+
+            margin-bottom: 45px;
+
